@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Rubik:wght@300;400;500&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -22,11 +21,7 @@
   --color-whatsapp-hover: #1ebe57;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 
 html {
   scroll-behavior: smooth;

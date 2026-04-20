@@ -1,43 +1,45 @@
-import { useState } from 'react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import messageSentSvg from '../assets/svg/message-sent.svg';
-import completFormSvg from '../assets/svg/complete-form.svg';
-import personalDataSvg from '../assets/svg/personal-data.svg';
-import organizingProjectsSvg from '../assets/svg/organizing-projects.svg';
-import happyCustomerSvg from '../assets/svg/happy-customer.svg';
-import checkingBoxesSvg from '../assets/svg/checking-boxes.svg';
-import actionSuccessfulSvg from '../assets/svg/action-successful.svg';
+import { useState } from "react";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import messageSentSvg from "../assets/svg/message-sent.svg";
+import completFormSvg from "../assets/svg/complete-form.svg";
+import personalDataSvg from "../assets/svg/personal-data.svg";
+import organizingProjectsSvg from "../assets/svg/organizing-projects.svg";
+import happyCustomerSvg from "../assets/svg/happy-customer.svg";
+import checkingBoxesSvg from "../assets/svg/checking-boxes.svg";
+import actionSuccessfulSvg from "../assets/svg/action-successful.svg";
 
 export default function HomePage() {
-  const [phone, setPhone] = useState('');
-  const [storeName, setStoreName] = useState('');
-  const [greeting, setGreeting] = useState('');
-  const [generatedLink, setGeneratedLink] = useState('');
+  const [phone, setPhone] = useState("");
+  const [storeName, setStoreName] = useState("");
+  const [greeting, setGreeting] = useState("");
+  const [generatedLink, setGeneratedLink] = useState("");
   const [copied, setCopied] = useState(false);
-  const [phoneError, setPhoneError] = useState('');
+  const [phoneError, setPhoneError] = useState("");
 
   const sanitizePhone = (value) => {
-    return value.replace(/[^0-9]/g, '');
+    return value.replace(/[^0-9]/g, "");
   };
 
   const handlePhoneChange = (e) => {
     const cleaned = sanitizePhone(e.target.value);
     setPhone(cleaned);
-    setPhoneError('');
+    setPhoneError("");
   };
 
   const generateLink = () => {
     if (!phone || phone.length < 7) {
-      setPhoneError('Please enter a valid phone number with country code (e.g. 2348012345678)');
+      setPhoneError(
+        "Please enter a valid phone number with country code (e.g. 2348012345678)",
+      );
       return;
     }
 
     const baseUrl = window.location.origin;
     const params = new URLSearchParams();
-    params.set('phone', phone);
-    if (storeName.trim()) params.set('name', storeName.trim());
-    if (greeting.trim()) params.set('greeting', greeting.trim());
+    params.set("phone", phone);
+    if (storeName.trim()) params.set("name", storeName.trim());
+    if (greeting.trim()) params.set("greeting", greeting.trim());
 
     const link = `${baseUrl}/order?${params.toString()}`;
     setGeneratedLink(link);
@@ -50,11 +52,11 @@ export default function HomePage() {
       setCopied(true);
       setTimeout(() => setCopied(false), 2500);
     } catch {
-      const textarea = document.createElement('textarea');
+      const textarea = document.createElement("textarea");
       textarea.value = generatedLink;
       document.body.appendChild(textarea);
       textarea.select();
-      document.execCommand('copy');
+      document.execCommand("copy");
       document.body.removeChild(textarea);
       setCopied(true);
       setTimeout(() => setCopied(false), 2500);
@@ -75,11 +77,13 @@ export default function HomePage() {
               </span>
             </div>
             <h1 className="font-poppins font-extrabold text-4xl sm:text-5xl lg:text-[3.4rem] leading-tight text-brand animate-fade-in-up delay-100">
-              Turn messy DMs into{' '}
+              Turn messy DMs into{" "}
               <span className="text-accent">clean orders</span>
             </h1>
             <p className="mt-5 text-text-secondary font-rubik text-base sm:text-lg leading-relaxed max-w-lg animate-fade-in-up delay-200">
-              Generate a custom link, share it with your customers, and receive perfectly formatted orders directly on WhatsApp. No backend needed.
+              Generate a custom link, share it with your customers, and receive
+              perfectly formatted orders directly on WhatsApp. No backend
+              needed.
             </p>
             <div className="mt-8 flex flex-wrap gap-3 animate-fade-in-up delay-300">
               <a
@@ -87,8 +91,17 @@ export default function HomePage() {
                 className="inline-flex items-center gap-2 bg-accent hover:bg-accent-hover text-white font-poppins font-semibold text-sm px-6 py-3.5 rounded-xl transition-all hover:shadow-lg hover:shadow-accent/20 hover:-translate-y-0.5"
               >
                 Get your link
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </a>
               <a
@@ -113,12 +126,22 @@ export default function HomePage() {
       {/* ── Trusted By / Social Proof Strip ── */}
       <section className="py-10 border-y border-border/50 bg-surface-alt">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <p className="text-text-muted text-xs font-rubik uppercase tracking-widest mb-6">Built for vendors on</p>
+          <p className="text-text-muted text-xs font-rubik uppercase tracking-widest mb-6">
+            Built for vendors on
+          </p>
           <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-14 opacity-40">
-            <span className="font-poppins font-bold text-lg text-brand">WhatsApp</span>
-            <span className="font-poppins font-bold text-lg text-brand">Instagram</span>
-            <span className="font-poppins font-bold text-lg text-brand">Facebook</span>
-            <span className="font-poppins font-bold text-lg text-brand">Twitter / X</span>
+            <span className="font-poppins font-bold text-lg text-brand">
+              WhatsApp
+            </span>
+            <span className="font-poppins font-bold text-lg text-brand">
+              Instagram
+            </span>
+            <span className="font-poppins font-bold text-lg text-brand">
+              Facebook
+            </span>
+            <span className="font-poppins font-bold text-lg text-brand">
+              Twitter / X
+            </span>
           </div>
         </div>
       </section>
@@ -134,28 +157,29 @@ export default function HomePage() {
               How it works
             </h2>
             <p className="mt-3 text-text-secondary font-rubik max-w-lg mx-auto">
-              Three steps to cleaner orders. No signup, no database, no friction.
+              Three steps to cleaner orders. No signup, no database, no
+              friction.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
             {[
               {
-                step: '01',
-                title: 'Configure your link',
-                desc: 'Enter your WhatsApp number, store name, and a custom greeting. We generate a unique order link.',
+                step: "01",
+                title: "Configure your link",
+                desc: "Enter your WhatsApp number, store name, and a custom greeting. We generate a unique order link.",
                 img: personalDataSvg,
               },
               {
-                step: '02',
-                title: 'Share with customers',
-                desc: 'Drop the link in your Instagram bio, WhatsApp status, or anywhere your customers are.',
+                step: "02",
+                title: "Share with customers",
+                desc: "Drop the link in your Instagram bio, WhatsApp status, or anywhere your customers are.",
                 img: organizingProjectsSvg,
               },
               {
-                step: '03',
-                title: 'Receive clean orders',
-                desc: 'Customers fill a simple form. Their details arrive in your WhatsApp, perfectly formatted.',
+                step: "03",
+                title: "Receive clean orders",
+                desc: "Customers fill a simple form. Their details arrive in your WhatsApp, perfectly formatted.",
                 img: happyCustomerSvg,
               },
             ].map((item, i) => (
@@ -170,7 +194,9 @@ export default function HomePage() {
                 <div className="inline-block px-3 py-1 bg-accent/10 text-accent text-xs font-poppins font-bold rounded-full mb-3">
                   Step {item.step}
                 </div>
-                <h3 className="font-poppins font-semibold text-lg text-brand mb-2">{item.title}</h3>
+                <h3 className="font-poppins font-semibold text-lg text-brand mb-2">
+                  {item.title}
+                </h3>
                 <p className="text-text-secondary font-rubik text-sm leading-relaxed max-w-xs mx-auto">
                   {item.desc}
                 </p>
@@ -195,31 +221,65 @@ export default function HomePage() {
               Why SwiftOrder
             </span>
             <h2 className="font-poppins font-bold text-3xl sm:text-4xl text-brand leading-tight">
-              Simple, powerful,{' '}<br className="hidden sm:block" />
+              Simple, powerful, <br className="hidden sm:block" />
               easy&#8209;to&#8209;use
             </h2>
             <div className="mt-8 space-y-5">
               {[
                 {
                   icon: (
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                    </svg>
                   ),
-                  title: 'Zero backend',
-                  desc: 'Pure frontend. No servers, no databases, no costs.',
+                  title: "Zero backend",
+                  desc: "Pure frontend. No servers, no databases, no costs.",
                 },
                 {
                   icon: (
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                      <path d="M12 18h.01" />
+                    </svg>
                   ),
-                  title: 'Mobile first',
-                  desc: 'Designed for thumbs. Big inputs, fast flow, instant send.',
+                  title: "Mobile first",
+                  desc: "Designed for thumbs. Big inputs, fast flow, instant send.",
                 },
                 {
                   icon: (
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+                    </svg>
                   ),
-                  title: 'WhatsApp native',
-                  desc: 'Orders land right in your WhatsApp chat. No new apps to learn.',
+                  title: "WhatsApp native",
+                  desc: "Orders land right in your WhatsApp chat. No new apps to learn.",
                 },
               ].map((feat, i) => (
                 <div key={i} className="flex gap-4 items-start">
@@ -227,8 +287,12 @@ export default function HomePage() {
                     {feat.icon}
                   </div>
                   <div>
-                    <h4 className="font-poppins font-semibold text-brand text-sm">{feat.title}</h4>
-                    <p className="text-text-secondary font-rubik text-sm mt-0.5">{feat.desc}</p>
+                    <h4 className="font-poppins font-semibold text-brand text-sm">
+                      {feat.title}
+                    </h4>
+                    <p className="text-text-secondary font-rubik text-sm mt-0.5">
+                      {feat.desc}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -245,11 +309,12 @@ export default function HomePage() {
               Get started
             </span>
             <h2 className="font-poppins font-bold text-3xl sm:text-4xl text-brand leading-tight">
-              Generate your{' '}<br className="hidden sm:block" />
+              Generate your <br className="hidden sm:block" />
               order link
             </h2>
             <p className="mt-3 text-text-secondary font-rubik max-w-md">
-              Fill in your details below and we'll create a custom checkout link you can share anywhere.
+              Fill in your details below and we'll create a custom checkout link
+              you can share anywhere.
             </p>
             <div className="mt-8 hidden md:block">
               <img
@@ -273,11 +338,13 @@ export default function HomePage() {
                   onChange={handlePhoneChange}
                   placeholder="e.g. 2348012345678"
                   className={`w-full px-4 py-3 rounded-xl border font-rubik text-sm transition-all bg-surface-alt placeholder:text-text-muted ${
-                    phoneError ? 'border-accent' : 'border-border'
+                    phoneError ? "border-accent" : "border-border"
                   }`}
                 />
                 {phoneError && (
-                  <p className="mt-1.5 text-accent text-xs font-rubik">{phoneError}</p>
+                  <p className="mt-1.5 text-accent text-xs font-rubik">
+                    {phoneError}
+                  </p>
                 )}
                 <p className="mt-1.5 text-text-muted text-xs font-rubik">
                   Include country code, no spaces or + sign
@@ -287,7 +354,10 @@ export default function HomePage() {
               {/* Store Name */}
               <div>
                 <label className="block font-poppins font-medium text-sm text-brand mb-1.5">
-                  Store Name <span className="text-text-muted font-normal">(optional)</span>
+                  Store Name{" "}
+                  <span className="text-text-muted font-normal">
+                    (optional)
+                  </span>
                 </label>
                 <input
                   type="text"
@@ -301,7 +371,10 @@ export default function HomePage() {
               {/* Greeting */}
               <div>
                 <label className="block font-poppins font-medium text-sm text-brand mb-1.5">
-                  Custom Greeting <span className="text-text-muted font-normal">(optional)</span>
+                  Custom Greeting{" "}
+                  <span className="text-text-muted font-normal">
+                    (optional)
+                  </span>
                 </label>
                 <input
                   type="text"
@@ -324,7 +397,18 @@ export default function HomePage() {
               {generatedLink && (
                 <div className="animate-scale-in mt-2 p-4 bg-success-light rounded-xl border border-success/20">
                   <p className="text-success font-poppins font-semibold text-xs mb-2 flex items-center gap-1.5">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg>
                     Link generated!
                   </p>
                   <div className="flex gap-2">
@@ -338,11 +422,11 @@ export default function HomePage() {
                       onClick={copyToClipboard}
                       className={`shrink-0 px-4 py-2.5 rounded-lg font-poppins font-semibold text-xs transition-all cursor-pointer ${
                         copied
-                          ? 'bg-success text-white'
-                          : 'bg-brand text-white hover:bg-brand-light'
+                          ? "bg-success text-white"
+                          : "bg-brand text-white hover:bg-brand-light"
                       }`}
                     >
-                      {copied ? 'Copied!' : 'Copy'}
+                      {copied ? "Copied!" : "Copy"}
                     </button>
                   </div>
                 </div>
@@ -364,15 +448,25 @@ export default function HomePage() {
             Ready to simplify your orders?
           </h2>
           <p className="mt-4 text-white/60 font-rubik max-w-md mx-auto">
-            Join vendors who've ditched the chaos of messy DMs. It takes less than 30 seconds.
+            Join vendors who've ditched the chaos of messy DMs. It takes less
+            than 30 seconds.
           </p>
           <a
             href="#generator"
             className="inline-flex items-center gap-2 mt-8 bg-accent hover:bg-accent-hover text-white font-poppins font-semibold text-sm px-8 py-4 rounded-xl transition-all hover:shadow-lg hover:shadow-accent/30 hover:-translate-y-0.5"
           >
             Generate your link now
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </a>
         </div>

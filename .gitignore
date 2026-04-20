@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+fix-css.cjs
+fix-html.cjs
+fix-html.js
+fix.js
+fix.sed
