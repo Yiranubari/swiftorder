@@ -28,3 +28,5 @@ fix-html.cjs
 fix-html.js
 fix.js
 fix.sed
+fix-homepage-link.cjs
+fix-homepage.cjs
