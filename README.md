@@ -1,63 +1,60 @@
-# ⚡ SwiftOrder
+# SwiftOrder
 
-**Turn messy DMs into clean orders.**
+Turn messy direct messages into clean orders.
 
-SwiftOrder is a lightweight, stateless React web app that bridges social commerce vendors and their customers. Vendors generate a custom checkout link, share it anywhere (Instagram bio, WhatsApp status, etc.), and receive perfectly formatted orders directly in their WhatsApp chat.
+SwiftOrder is a simple web tool made for people who sell things online. If you are tired of collecting orders manually through chats, this app helps you. You create a checkout link, share it on your Instagram or WhatsApp, and customers use it to send perfectly formatted orders straight to your WhatsApp.
 
-## 🚀 Features
+### What it does
 
-- **Vendor Link Generator** — Input your WhatsApp number, store name, and greeting to generate a unique order link.
-- **Customer Order Form** — Mobile-first, touch-friendly form that collects name, phone, address, and order details.
-- **WhatsApp Payload Compiler** — Automatically formats all order data using WhatsApp markdown and opens the chat via the `wa.me` API.
-- **Zero Backend** — Pure frontend. No servers, no databases, no cost.
+* Link Generator
+Put in your WhatsApp number and store name to get your own special order link.
 
-## 🛠 Tech Stack
+* Order Form
+A clean form for your customers. They can easily enter their name, phone number, address, and what they want to buy.
 
-- **React 18** (Functional Components + Hooks)
-- **Vite** (Build tool)
-- **Tailwind CSS v4**
-- **React Router DOM** (URL parameter parsing)
-- **Google Fonts** — Poppins (headings) + Rubik (body)
-- **unDraw** SVG illustrations
+* Direct to WhatsApp
+When a customer finishes the form, it formats their order and opens WhatsApp ready to send the message to you.
 
-## 📦 Getting Started
+* Completely Free
+The app runs entirely in the browser. There are no databases and no servers to pay for.
 
+### Built with
+
+* React
+* Vite
+* Tailwind CSS
+* React Router
+
+### How to run it locally
+
+Clone the project to your computer
 ```bash
-# Clone the repo
 git clone https://github.com/Yiranubari/swiftorder.git
 cd swiftorder
+```
 
-# Install dependencies
+Install the required packages
+```bash
 npm install
+```
 
-# Start dev server
+Start the local server
+```bash
 npm run dev
+```
 
-# Build for production
+Build for production
+```bash
 npm run build
 ```
 
-## 📂 Project Structure
+### How it works
 
-```
-src/
-├── assets/svg/        # unDraw SVG illustrations
-├── components/        # Navbar, Footer
-├── pages/
-│   ├── HomePage.jsx   # Vendor link generator (landing page)
-│   └── OrderPage.jsx  # Customer checkout form
-├── App.jsx            # Router setup
-├── index.css          # Tailwind + custom theme
-└── main.jsx           # Entry point
-```
+1. You enter your WhatsApp number and store details on the homepage.
+2. The app gives you a unique link.
+3. Your customer clicks the link and fills out their order details.
+4. The app groups all the information and redirects them to WhatsApp to send the final order to you.
 
-## 🔗 How It Works
+### License
 
-1. Vendor enters their WhatsApp number and store details on the home page.
-2. A unique URL is generated (e.g., `yoursite.com/order?phone=234...&name=Boss+Bakery`).
-3. Customer clicks the link, fills out the order form.
-4. On submit, the app compiles a formatted message and redirects to `wa.me` with the payload pre-filled.
-
-## 📄 License
-
-MIT
+MIT License
