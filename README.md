@@ -1,16 +1,63 @@
-# React + Vite
+# ⚡ SwiftOrder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Turn messy DMs into clean orders.**
 
-Currently, two official plugins are available:
+SwiftOrder is a lightweight, stateless React web app that bridges social commerce vendors and their customers. Vendors generate a custom checkout link, share it anywhere (Instagram bio, WhatsApp status, etc.), and receive perfectly formatted orders directly in their WhatsApp chat.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Features
 
-## React Compiler
+- **Vendor Link Generator** — Input your WhatsApp number, store name, and greeting to generate a unique order link.
+- **Customer Order Form** — Mobile-first, touch-friendly form that collects name, phone, address, and order details.
+- **WhatsApp Payload Compiler** — Automatically formats all order data using WhatsApp markdown and opens the chat via the `wa.me` API.
+- **Zero Backend** — Pure frontend. No servers, no databases, no cost.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠 Tech Stack
 
-## Expanding the ESLint configuration
+- **React 18** (Functional Components + Hooks)
+- **Vite** (Build tool)
+- **Tailwind CSS v4**
+- **React Router DOM** (URL parameter parsing)
+- **Google Fonts** — Poppins (headings) + Rubik (body)
+- **unDraw** SVG illustrations
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📦 Getting Started
+
+```bash
+# Clone the repo
+git clone https://github.com/Yiranubari/swiftorder.git
+cd swiftorder
+
+# Install dependencies
+npm install
+
+# Start dev server
+npm run dev
+
+# Build for production
+npm run build
+```
+
+## 📂 Project Structure
+
+```
+src/
+├── assets/svg/        # unDraw SVG illustrations
+├── components/        # Navbar, Footer
+├── pages/
+│   ├── HomePage.jsx   # Vendor link generator (landing page)
+│   └── OrderPage.jsx  # Customer checkout form
+├── App.jsx            # Router setup
+├── index.css          # Tailwind + custom theme
+└── main.jsx           # Entry point
+```
+
+## 🔗 How It Works
+
+1. Vendor enters their WhatsApp number and store details on the home page.
+2. A unique URL is generated (e.g., `yoursite.com/order?phone=234...&name=Boss+Bakery`).
+3. Customer clicks the link, fills out the order form.
+4. On submit, the app compiles a formatted message and redirects to `wa.me` with the payload pre-filled.
+
+## 📄 License
+
+MIT
