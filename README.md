@@ -6,44 +6,48 @@ SwiftOrder is a simple web tool made for people who sell things online. If you a
 
 ### What it does
 
-* Link Generator
-Put in your WhatsApp number and store name to get your own special order link.
+- Link Generator
+  Put in your WhatsApp number and store name to get your own special order link.
 
-* Order Form
-A clean form for your customers. They can easily enter their name, phone number, address, and what they want to buy.
+- Order Form
+  A clean form for your customers. They can easily enter their name, phone number, address, and what they want to buy.
 
-* Direct to WhatsApp
-When a customer finishes the form, it formats their order and opens WhatsApp ready to send the message to you.
+- Direct to WhatsApp
+  When a customer finishes the form, it formats their order and opens WhatsApp ready to send the message to you.
 
-* Completely Free
-The app runs entirely in the browser. There are no databases and no servers to pay for.
+- Completely Free
+  The app runs entirely in the browser. There are no databases and no servers to pay for.
 
 ### Built with
 
-* React
-* Vite
-* Tailwind CSS
-* React Router
+- React
+- Vite
+- Tailwind CSS
+- React Router
 
 ### How to run it locally
 
 Clone the project to your computer
+
 ```bash
 git clone https://github.com/Yiranubari/swiftorder.git
 cd swiftorder
 ```
 
 Install the required packages
+
 ```bash
 npm install
 ```
 
 Start the local server
+
 ```bash
 npm run dev
 ```
 
 Build for production
+
 ```bash
 npm run build
 ```
@@ -58,14 +62,3 @@ npm run build
 ### License
 
 MIT License
-
-### How to deploy on Vercel
-
-If you want to put this live on the internet using Vercel, it is very simple.
-First, make sure you push your code to a GitHub repository.
-Then, log into Vercel and click Add New Project.
-Choose your SwiftOrder repository.
-Vercel will detect that you are using Vite and React.
-Leave the build settings as they are and click Deploy.
-
-A vercel.json file is already included so that all your links work perfectly when people visit them.
