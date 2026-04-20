@@ -58,3 +58,14 @@ npm run build
 ### License
 
 MIT License
+
+### How to deploy on Vercel
+
+If you want to put this live on the internet using Vercel, it is very simple.
+First, make sure you push your code to a GitHub repository.
+Then, log into Vercel and click Add New Project.
+Choose your SwiftOrder repository.
+Vercel will detect that you are using Vite and React.
+Leave the build settings as they are and click Deploy.
+
+A vercel.json file is already included so that all your links work perfectly when people visit them.
