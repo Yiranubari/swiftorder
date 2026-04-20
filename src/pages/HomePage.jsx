@@ -14,7 +14,7 @@ export default function HomePage() {
       <Navbar />
 
       <main className="flex-1">
-        {/* ── Hero Section ── */}
+
         <section className="pt-28 pb-20 md:pt-36 md:pb-28 px-6 overflow-hidden">
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -70,7 +70,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ── Trusted By / Social Proof Strip ── */}
+
         <section className="py-10 border-y border-border/50 bg-surface-alt">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <p className="text-text-muted text-xs font-rubik uppercase tracking-widest mb-6">
@@ -93,7 +93,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ── How It Works ── */}
+
         <section id="how-it-works" className="py-20 md:py-28 px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
@@ -153,7 +153,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ── Features Highlight ── */}
+
         <section className="bg-white py-20 px-6 border-y border-border/50">
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
             <div className="relative">
@@ -256,7 +256,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ── CTA / Bottom Banner ── */}
+
         <section className="py-20 md:py-28 px-6 bg-brand text-white text-center">
           <div className="max-w-2xl mx-auto">
             <img

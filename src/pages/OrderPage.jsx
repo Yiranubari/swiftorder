@@ -67,7 +67,6 @@ _Generated via SwiftOrder_`;
     window.location.href = `https://wa.me/${vendorPhone}?text=${encoded}`;
   };
 
-  // ── Invalid Link State ──
   if (!vendorPhone) {
     return (
       <div className="min-h-screen bg-surface flex flex-col">
@@ -100,14 +99,13 @@ _Generated via SwiftOrder_`;
     );
   }
 
-  // ── Valid Order Form ──
   return (
     <div className="min-h-screen bg-surface-alt flex flex-col">
       <Navbar />
 
       <main className="flex-1 pt-24 pb-16 px-4 sm:px-6">
         <div className="max-w-lg mx-auto">
-          {/* Header */}
+
           <div className="text-center mb-8 animate-fade-in-up">
             <div className="w-14 h-14 bg-accent rounded-2xl flex items-center justify-center mx-auto mb-4">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -135,10 +133,10 @@ _Generated via SwiftOrder_`;
             </p>
           </div>
 
-          {/* Form Card */}
+
           <div className="bg-surface rounded-2xl border border-border p-5 sm:p-8 shadow-sm animate-fade-in-up delay-100">
             <form onSubmit={handleSubmit} noValidate className="space-y-5">
-              {/* Customer Name */}
+
               <div>
                 <label className="block font-poppins font-medium text-sm text-brand mb-1.5">
                   Your Name <span className="text-accent">*</span>
@@ -157,7 +155,7 @@ _Generated via SwiftOrder_`;
                 )}
               </div>
 
-              {/* Phone */}
+
               <div>
                 <label className="block font-poppins font-medium text-sm text-brand mb-1.5">
                   Phone Number <span className="text-accent">*</span>
@@ -176,7 +174,7 @@ _Generated via SwiftOrder_`;
                 )}
               </div>
 
-              {/* Delivery Address */}
+
               <div>
                 <label className="block font-poppins font-medium text-sm text-brand mb-1.5">
                   Delivery Address <span className="text-accent">*</span>
@@ -198,7 +196,7 @@ _Generated via SwiftOrder_`;
                 </div>
               </div>
 
-              {/* Order Details */}
+
               <div>
                 <label className="block font-poppins font-medium text-sm text-brand mb-1.5">
                   Order Details <span className="text-accent">*</span>
@@ -220,7 +218,7 @@ _Generated via SwiftOrder_`;
                 </div>
               </div>
 
-              {/* Special Instructions */}
+
               <div>
                 <label className="block font-poppins font-medium text-sm text-brand mb-1.5">
                   Special Instructions <span className="text-text-muted font-normal">(optional)</span>
@@ -237,7 +235,7 @@ _Generated via SwiftOrder_`;
                 </div>
               </div>
 
-              {/* Submit */}
+
               <button
                 type="submit"
                 className="w-full flex items-center justify-center gap-2 bg-whatsapp hover:bg-whatsapp-hover text-white font-poppins font-semibold text-sm py-3.5 rounded-xl transition-all hover:shadow-lg hover:shadow-whatsapp/20 hover:-translate-y-0.5 cursor-pointer"
@@ -250,7 +248,7 @@ _Generated via SwiftOrder_`;
             </form>
           </div>
 
-          {/* Trust footer */}
+
           <p className="text-center text-text-muted font-rubik text-xs mt-6 animate-fade-in delay-300">
             Powered by <span className="font-poppins font-semibold text-brand">Swift<span className="text-accent">Order</span></span> &mdash; your data goes directly to the vendor's WhatsApp.
           </p>
